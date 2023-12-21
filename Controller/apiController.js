@@ -463,7 +463,7 @@ const reviewofrooms=async(req,res)=>{
        const result=await reviewModel.find({name:req.params.id}).populate("user");
        return res.status(200).json({
         success:true,
-        message:'reviewed successfully!',
+        message:'review fetched!',
         result
        })
     }catch(error){
