@@ -28,6 +28,7 @@
               <thead>
                 <a href="/admin/roomcreate" class="btn btn-success">Add </a>
                 <tr>
+                  <th scope="col">Index</th>
                   <th scope="col">Name</th>
                   <th scope="col">Bed</th>
                   <th scope="col">Bath</th>
@@ -40,16 +41,18 @@
                 </tr>
               </thead>
               <tbody>
+                <%let count=0 %>
                 <% for(let elements of rooms){%>
                   
                     <tr>
+                      <th scope="row"><%=count++%> </th>
                       <th scope="row"><%=elements.name%></th>
                       <td><%=elements.bed%></td>
                       <td><%=elements.bath%></td>
                       <td><%=elements.price%></td>
                       <td><img src="/<%=elements.image%>" height="50px"/></td>
                       <td><%=elements.description%></td>
-                      <td><%=elements.categoryid%></td>
+                      <td><%=elements.categoryid.name%></td>
                       <%if(elements.isActivate==true){%>
                         <td><a href="/admin/roomdeactivate/<%=elements._id%>" class="btn btn-danger">Deactivate</a></td>
                       <%}else{%>

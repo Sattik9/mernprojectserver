@@ -29,6 +29,7 @@
               <thead>
                 <a href="/admin/blogcreate" class="btn btn-success">Add </a>
                 <tr>
+                  <th scope="col">Index</th>
                   <th scope="col">Title</th>
                   <th scope="col">Subtitle</th>
                   <th scope="col">Content</th>
@@ -40,9 +41,11 @@
                 </tr>
               </thead>
               <tbody>
+                <% let count=0 %>
                 <% for(let elements of blogs){%>
                   <tr>
-                      <th scope="row"><%=elements.title%></th>
+                      <th><%=count++%></th>
+                      <th><%=elements.title%></th>
                       <td><%=elements.subtitle%></td>
                       <td><%=elements.content%></td>
                       <td><%=elements.author.name%></td>

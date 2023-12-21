@@ -28,7 +28,7 @@
               <thead>
                 
                 <tr>
-                  <th scope="col">CategoryId</th>
+                  <th scope="col">Index</th>
                   <th scope="col">Name</th>
                   <!-- <th scope="col">Bed</th>
                   <th scope="col">Bath</th> -->
@@ -38,10 +38,11 @@
                 </tr>
               </thead>
               <tbody>
+                <%let count=0 %>
                 <% for(let elements of categories){%>
                   
                     <tr>
-                      <th scope="row"><%=elements._id%></th>
+                      <th scope="row"><%=count++%></th>
                       <th><%=elements.name%></th>
                       <!-- <td><%=elements.bed%></td>
                       <td><%=elements.bath%></td> -->
