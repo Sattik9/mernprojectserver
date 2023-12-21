@@ -473,6 +473,27 @@ const bookdelete=async(req,res)=>{
     }
 
 }
+
+const contactdelete=async(req,res)=>{
+    try{
+        const result=await ContactModel.findByIdAndDelete(req.params.id);
+        res.redirect(`/admin/contact`);
+    }
+    catch(error){
+        console.log(error);
+        
+    }
+}
+const categorydelete=async(req,res)=>{
+    try{
+        const result=await categoryModel.findByIdAndDelete(req.params.id);
+        res.redirect(`/admin/categorypanel`);
+    }
+    catch(error){
+        console.log(error);
+        
+    }
+}
 module.exports={
     loginadmin,
     logoutadmin,
@@ -506,5 +527,7 @@ module.exports={
     categoryUpdate,
     bookapprove,
     bookdisapprove,
-    bookdelete
+    bookdelete,
+    contactdelete,
+    categorydelete
 }

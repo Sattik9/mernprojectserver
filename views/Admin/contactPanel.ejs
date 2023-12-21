@@ -16,8 +16,8 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Categories</h1>
-      <a href="/admin/categorycreate" class="btn btn-success">Add </a>
+      <h1>Contacts</h1>
+      
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -43,8 +43,8 @@
                       <th><%=elements.email%></th>
                       <td><%=elements.topic%></td>
                       <td><%=elements.phone%></td>
-                      
                       <td><%=elements.msg%></td>
+                      <td><a href="/admin/contactdelete/<%=elements._id%>" class="btn btn-danger" style="margin-left: 5px;">Delete</a></td>
                   </tr>
                   
                 <%}%>

@@ -30,8 +30,8 @@
                 <tr>
                   <th scope="col">CategoryId</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Bed</th>
-                  <th scope="col">Bath</th>
+                  <!-- <th scope="col">Bed</th>
+                  <th scope="col">Bath</th> -->
                   <th scope="col">Image</th>
                   <th scope="col">Description</th>
                   <th colspan="2">Operations</th>
@@ -43,11 +43,12 @@
                     <tr>
                       <th scope="row"><%=elements._id%></th>
                       <th><%=elements.name%></th>
-                      <td><%=elements.bed%></td>
-                      <td><%=elements.bath%></td>
+                      <!-- <td><%=elements.bed%></td>
+                      <td><%=elements.bath%></td> -->
                       <td><img src="/<%=elements.image%>" height="50px"/></td>
                       <td><%=elements.description%></td>
                       <td><a href="/admin/categoryedit/<%=elements._id%>" class="btn btn-primary">Edit</a></td>
+                      <td><a href="/admin/categorydelete/<%=elements._id%>" class="btn btn-danger" style="margin-left: 5px;">Delete</a></td>
                   </tr>
                   
                 <%}%>

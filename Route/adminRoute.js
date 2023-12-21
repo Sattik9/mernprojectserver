@@ -50,7 +50,8 @@ adminRouter.get("/bookdisapprove/:id",adminverify,adminController.bookdisapprove
 adminRouter.get("/roomdelete/:id",adminverify,adminController.roomdelete);
 adminRouter.get("/blogdelete/:id",adminverify,adminController.blogdelete);
 adminRouter.get("/bookdelete/:id",adminverify,adminController.bookdelete);
-
+adminRouter.get("/contactdelete/:id",adminverify,adminController.contactdelete);
+adminRouter.get("/categorydelete/:id",adminverify,adminController.categorydelete);
 //activate and deactivate//
 adminRouter.get("/blogactivate/:id",adminverify,adminController.blogactivate);
 adminRouter.get("/blogdeactivate/:id",adminverify,adminController.blogdeactivate);
