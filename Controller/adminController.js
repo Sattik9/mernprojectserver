@@ -70,7 +70,7 @@ const bookingpanel=async(req,res)=>{
 
 //room panel//
 const roompanel=async(req,res)=>{
-    const room=await roomModel.find();
+    const room=await roomModel.find().populate("categoryid");
     res.render("Admin/roompanel",{
       rooms:room,
       data:req.admin
