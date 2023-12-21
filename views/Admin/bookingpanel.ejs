@@ -40,8 +40,10 @@
                 </tr>
               </thead>
               <tbody>
+                <% let count=1%>
                 <% for(let elements of bookings){%>
                   <tr>
+                    <th scope="row"><%=count++%></th>
                       <th scope="row"><%=elements.name%></th>
                       <td><%=elements.email%></td>
                       <td><%=elements.checkin%></td>
