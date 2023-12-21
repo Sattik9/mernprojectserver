@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('common/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('common/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('common/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Edit Rooms</h1>
+      
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/destination/listing">Home</a></li>
+          <li class="breadcrumb-item">Destination</li>
+          <li class="breadcrumb-item active">Update</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Update Data</h5>
+
+              <!-- Horizontal Form -->
+              <form action="/admin/roomupdate" method="post" enctype="multipart/form-data">
+                <h1><%=message%></h1>
+                <p>Category:<%=rooms.categoryid.name%></p>
+                  <div class="form-group">
+                    <label for="department">Select Category:</label>
+                    <select class="form-control" id="categoryid" name="categoryid" required>
+                        <% for (let categories of category) { %>
+                            <option value="<%= categories._id %>" ><%= categories.name %></option>
+                        <% } %> 
+                    </select>
+                </div>
+                <div class="row mb-3" style="margin-top:10px ;">
+                  <label for="inputEmail3" class="col-sm-3 col-form-label" >Name</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="inputText" name="name" value="<%=rooms.name%>" required>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                 
+                  <div class="col-sm-9">
+                    <input type="hidden" class="form-control"  name="id" value="<%=rooms._id%>">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Bed</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="inputText" name="bed" value="<%=rooms.bed%>" required>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Bath</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="inputText" name="bath" value="<%=rooms.bath%>" required>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Price</label>
+                    <div class="col-sm-9">
+                      
+                      <input type="text" class="form-control" id="inputText" name="price" value="<%=rooms.price%>" required>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Image</label>
+                    <div class="col-sm-9">
+                      <input type="file" class="form-control" style="color:red;" id="inputText" name="image" accept="image/png, image/jpeg,image/jpg" >
+                      <img src="/<%=rooms.image%>" width="50px">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Description</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="inputText" name="description" value="<%=rooms.description%>" required>
+                    </div>
+                  </div>
+                  
+                
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+              </form><!-- End Horizontal Form -->
+
+            </div>
+          </div>
+
+          
+
+        </div>
+
+       
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- ======= Footer ======= -->
+  <%- include('common/footer.ejs')%>

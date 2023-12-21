@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('common/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('common/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('common/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Categories</h1>
+      <a href="/admin/categorycreate" class="btn btn-success">Add </a>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-12">
+          
+            <table class="table datatable" style="margin-top: 20px;">
+              <thead>
+                
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Topic</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(let elements of contact){%>
+                  
+                    <tr>
+                      <th scope="row"><%=elements.name%></th>
+                      <th><%=elements.email%></th>
+                      <td><%=elements.topic%></td>
+                      <td><%=elements.phone%></td>
+                      
+                      <td><%=elements.msg%></td>
+                  </tr>
+                  
+                <%}%>
+              </tbody>
+            </table>
+            
+
+        </div>
+          </div>
+        </div><!-- End Left side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+<div style="margin-top: 300px;"></div>
+
+  <!-- ======= Footer ======= -->
+  <%- include('common/footer.ejs')%>

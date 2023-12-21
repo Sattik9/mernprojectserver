@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('common/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('common/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('common/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Bookings</h1>
+      
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-12">
+          
+            <table class="table datatable" style="margin-top: 20px;">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Checkin</th>
+                  <th scope="col">Checkout</th>
+                  <th scope="col">Room</th>
+                  <th scope="col">Person</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Status</th>
+                 
+                  <th scope="col">Operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(let elements of bookings){%>
+                  <tr>
+                      <th scope="row"><%=elements.name%></th>
+                      <td><%=elements.email%></td>
+                      <td><%=elements.checkin%></td>
+                      <td><%=elements.checkout%></td>
+                      <td><%=elements.room.name%></td>
+                      <td><%=elements.person%></td>
+                      <td><%=elements.price%></td>
+                      <%if(elements.isPending==true){%>
+                        <td><a href="/admin/bookapprove/<%=elements._id%>" class="btn btn-success">Approve</a></td>
+                      <%}else{%>
+                        <td><a href="/admin/bookdisapprove/<%=elements._id%>" class="btn btn-danger">Disapprove</a></td>
+                      <%}%>
+                      <td><a href="/admin/bookdelete/<%=elements._id%>" class="btn btn-danger" style="margin-left: 5px;">Delete</a></td>
+                    </tr>
+                <%}%>
+              </tbody>
+            </table>
+            
+
+        </div>
+          </div>
+        </div><!-- End Left side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+<div style="margin-top: 300px;"></div>
+
+  <!-- ======= Footer ======= -->
+  <%- include('common/footer.ejs')%>
+

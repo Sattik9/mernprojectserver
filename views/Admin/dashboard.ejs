@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('common/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('common/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('common/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/admin/dashboard">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+           <!-- User Card -->
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card sales-card">
+    <div class="card-body">
+      <h5 class="card-title">Categories<span>| Total</span></h5>
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+          <i class="bi bi-person"></i> <!-- Change the icon here -->
+        </div>
+        <div class="ps-3">
+          <h6><%= Categories %></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- End User Card -->
+
+<!-- Blog Card -->
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card sales-card">
+    <div class="card-body">
+      <h5 class="card-title">Blog <span>| Total</span></h5>
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+          <i class="bi bi-pencil"></i> <!-- Change the icon here -->
+        </div>
+        <div class="ps-3">
+          <h6><%= Blogs %></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- End Blog Card -->
+
+<!-- Doctor Card -->
+<div class="col-xxl-4 col-md-6">
+  <div class="card info-card sales-card">
+    <div class="card-body">
+      <h5 class="card-title">Rooms <span>| Total</span></h5>
+      <div class="d-flex align-items-center">
+        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+          <i class="bi bi-person-circle"></i> <!-- Change the icon here -->
+        </div>
+        <div class="ps-3">
+          <h6><%= Rooms %></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- End Doctor Card -->
+
+            
+
+          </div>
+        </div><!-- End Left side columns -->
+
+       
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+  <!-- ======= Footer ======= -->
+  <%- include('common/footer.ejs')%>
+

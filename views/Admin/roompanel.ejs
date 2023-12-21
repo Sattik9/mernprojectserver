@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('common/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('common/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('common/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Rooms</h1>
+      
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-12">
+          
+            <table class="table datatable" style="margin-top: 20px;">
+              <thead>
+                <a href="/admin/roomcreate" class="btn btn-success">Add </a>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Bed</th>
+                  <th scope="col">Bath</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Category</th>
+                 
+                  <th colspan="2">operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(let elements of rooms){%>
+                  
+                    <tr>
+                      <th scope="row"><%=elements.name%></th>
+                      <td><%=elements.bed%></td>
+                      <td><%=elements.bath%></td>
+                      <td><%=elements.price%></td>
+                      <td><img src="/<%=elements.image%>" height="50px"/></td>
+                      <td><%=elements.description%></td>
+                      <td><%=elements.categoryid%></td>
+                      <%if(elements.isActivate==true){%>
+                        <td><a href="/admin/roomdeactivate/<%=elements._id%>" class="btn btn-danger">Deactivate</a></td>
+                      <%}else{%>
+                        <td><a href="/admin/roomactivated/<%=elements._id%>" class="btn btn-success">Activate</a></td>
+                      <%}%>
+                      <td><a href="/admin/roomedit/<%=elements._id%>" class="btn btn-primary">Edit</a></td>
+                      <td><a href="/admin/roomdelete/<%=elements._id%>" class="btn btn-danger" style="margin-left: 5px;">Delete</a></td>
+                    </tr>
+                  
+                <%}%>
+              </tbody>
+            </table>
+            
+
+        </div>
+          </div>
+        </div><!-- End Left side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+<div style="margin-top: 300px;"></div>
+
+  <!-- ======= Footer ======= -->
+  <%- include('common/footer.ejs')%>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('common/head.ejs')%>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <%- include('common/header.ejs')%>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <%- include('common/sidebar.ejs')%>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Categories</h1>
+      <a href="/admin/categorycreate" class="btn btn-success">Add </a>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+        <div class="col-lg-12">
+          
+            <table class="table datatable" style="margin-top: 20px;">
+              <thead>
+                
+                <tr>
+                  <th scope="col">CategoryId</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Bed</th>
+                  <th scope="col">Bath</th>
+                  <th scope="col">Image</th>
+                  <th scope="col">Description</th>
+                  <th colspan="2">Operations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(let elements of categories){%>
+                  
+                    <tr>
+                      <th scope="row"><%=elements._id%></th>
+                      <th><%=elements.name%></th>
+                      <td><%=elements.bed%></td>
+                      <td><%=elements.bath%></td>
+                      <td><img src="/<%=elements.image%>" height="50px"/></td>
+                      <td><%=elements.description%></td>
+                      <td><a href="/admin/categoryedit/<%=elements._id%>" class="btn btn-primary">Edit</a></td>
+                  </tr>
+                  
+                <%}%>
+              </tbody>
+            </table>
+            
+
+        </div>
+          </div>
+        </div><!-- End Left side columns -->
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+<div style="margin-top: 300px;"></div>
+
+  <!-- ======= Footer ======= -->
+  <%- include('common/footer.ejs')%>
