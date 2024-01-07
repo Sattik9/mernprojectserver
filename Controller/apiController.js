@@ -53,8 +53,8 @@ const regcreate=async(req,res)=>{
                     secure: false,
                     requireTLS: true,
                     auth:{
-                         user:"sttksarkar5261@gmail.com",
-                         pass:"pgfhifvnazrlkbiq",
+                         user:"sattiksarkar980@gmail.com",
+                         pass:"ijqwxpvjtumfqlbe",
                         }
                 })
                 const mailOptions={
